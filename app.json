@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "nooom",
+    "slug": "nooom",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "nooom"
+}
