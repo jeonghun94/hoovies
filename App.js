@@ -10,7 +10,9 @@ import {
   DefaultTheme,
 } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+const queryClient = new QueryClient();
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 const loadImages = (images) =>
   images.map((image) => {
@@ -43,8 +45,10 @@ export default function App() {
     );
   }
   return (
-    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
-      <Tabs />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+        <Tabs />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
