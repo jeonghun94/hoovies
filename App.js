@@ -11,6 +11,7 @@ import {
 } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Root from "./navigation/Root";
 
 const queryClient = new QueryClient();
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
@@ -47,7 +48,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
-        <Tabs />
+        <Root />
       </NavigationContainer>
     </QueryClientProvider>
   );
